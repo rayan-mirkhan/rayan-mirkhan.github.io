@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://example.github.io/rayan-mirkhan/sitemap.xml
+Sitemap: https://rayan-mirkhan.github.io/sitemap.xml

@@ -7,7 +7,7 @@
   <meta name="robots" content="noindex">
   <meta name="theme-color" content="#0B1A2E">
   <!-- Self-contained on purpose: GitHub Pages serves this file at any missing URL depth,
-       where relative asset paths would not resolve. -->
+       where relative asset paths would not resolve. The site is a user site, so home is "/". -->
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='4' fill='%230B1A2E'/%3E%3Crect x='8' y='50' width='48' height='4' fill='%23E8B931'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Georgia,serif' font-size='30' font-weight='700' fill='%23E8B931'%3ERM%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -67,17 +67,9 @@
     <h1>ئەڤ پەڕە نەهاتە دیتن</h1>
     <p class="en" lang="en" dir="ltr">This page is off air</p>
     <div class="actions">
-      <a class="btn btn--ku" href="./" data-home>ڤەگەڕە بو سەرەکی</a>
-      <a class="btn btn--en" href="./" data-home lang="en" dir="ltr">Back to home</a>
+      <a class="btn btn--ku" href="/">ڤەگەڕە بو سەرەکی</a>
+      <a class="btn btn--en" href="/" lang="en" dir="ltr">Back to home</a>
     </div>
   </main>
-  <script>
-    // On a GitHub Pages project site the home page lives at /<repo>/, whatever depth the missing URL had.
-    (function () {
-      var seg = location.pathname.split('/').filter(Boolean)[0];
-      if (!/\.github\.io$/.test(location.hostname) || !seg) return;
-      document.querySelectorAll('[data-home]').forEach(function (a) { a.href = '/' + seg + '/'; });
-    })();
-  </script>
 </body>
 </html>
