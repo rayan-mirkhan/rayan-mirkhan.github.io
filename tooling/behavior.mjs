@@ -3,8 +3,8 @@ import { chromium } from 'playwright';
 import { start } from './serve.mjs';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
-const server = await start();
-const URL = 'http://localhost:4173/';
+const server = process.env.TARGET ? null : await start();
+const URL = process.env.TARGET || 'http://localhost:4173/';
 const browser = await chromium.launch();
 const ok = (c, m) => console.log(c ? 'PASS' : 'FAIL', m);
 
@@ -55,7 +55,7 @@ await page.keyboard.press('Escape');
 ok(await page.evaluate(() => document.getElementById('menu').hidden && document.activeElement.classList.contains('menu-btn') && !document.documentElement.classList.contains('is-locked')), 'Esc closes, restores focus, unlocks');
 
 // 404 under subpath
-const r = await page.goto('http://localhost:4173/no/such/page', { waitUntil: 'networkidle' });
+const r = await page.goto(URL + 'no/such/page', { waitUntil: 'networkidle' });
 ok(r.status() === 404 && (await page.locator('h1').textContent()).includes('نەهاتە دیتن'), '404 page renders at nested path');
 
 // CV files reachable
@@ -68,4 +68,4 @@ await fp.waitForTimeout(500);
 ok(ferr.length === 0 && await fp.evaluate(() => !!window.RM.i18n), 'works via file://');
 
 ok(errs.length === 0, 'no page errors ' + errs.join('|'));
-await browser.close(); server.close();
+await browser.close(); server?.close();
