@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ku-Arab" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ئەڤ پەڕە نەهاتە دیتن · This page is off air</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0B1A2E">
+  <!-- Self-contained on purpose: GitHub Pages serves this file at any missing URL depth,
+       where relative asset paths would not resolve. -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='4' fill='%230B1A2E'/%3E%3Crect x='8' y='50' width='48' height='4' fill='%23E8B931'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Georgia,serif' font-size='30' font-weight='700' fill='%23E8B931'%3ERM%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=IBM+Plex+Mono:wght@500&family=Inter:wght@500;600&family=Vazirmatn:wght@600;800&display=swap">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      display: grid;
+      place-items: center;
+      padding: 1.5rem 1rem;
+      background: #0B1A2E;
+      color: #ECE8DF;
+      font-family: "Inter", system-ui, sans-serif;
+      text-align: center;
+      position: relative;
+      isolation: isolate;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      opacity: .06;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+    main { display: grid; justify-items: center; gap: 1.5rem; max-inline-size: 40rem; }
+    .badge {
+      display: inline-flex; align-items: center; gap: .55rem;
+      padding-block: .35rem; padding-inline: .75rem .9rem;
+      border: 1px solid rgba(255, 255, 255, .14); border-radius: 999px;
+      font-family: "IBM Plex Mono", monospace; font-size: .75rem; letter-spacing: .16em; color: #A9B3C2;
+    }
+    .badge i { inline-size: .55rem; block-size: .55rem; border-radius: 50%; background: #D7263D; opacity: .4; }
+    .code { margin: 0; font-family: "Fraunces", Georgia, serif; font-weight: 700; font-size: clamp(5rem, 22vw, 10rem); line-height: 1; color: #E8B931; font-variation-settings: "opsz" 144; }
+    h1 { margin: 0; font-family: "Vazirmatn", sans-serif; font-weight: 800; font-size: clamp(1.6rem, 5vw, 2.25rem); line-height: 1.5; }
+    .en { margin: -.75rem 0 0; font-family: "Fraunces", Georgia, serif; font-weight: 700; font-size: clamp(1.25rem, 3.5vw, 1.6rem); color: #A9B3C2; }
+    .actions { display: flex; flex-wrap: wrap; justify-content: center; gap: .75rem; }
+    .btn {
+      display: inline-flex; align-items: center; min-block-size: 3rem; padding-inline: 1.4rem;
+      border-radius: 2px; font-weight: 600; text-decoration: none; background: #E8B931; color: #0B1A2E;
+      transition: background-color 200ms ease;
+    }
+    .btn:hover { background: #F5DC8A; }
+    .btn--ku { font-family: "Vazirmatn", sans-serif; }
+    .btn--en { background: transparent; color: #ECE8DF; border: 1.5px solid rgba(236, 232, 223, .45); }
+    .btn--en:hover { background: #E8B931; color: #0B1A2E; border-color: #E8B931; }
+    :focus-visible { outline: 3px solid #E8B931; outline-offset: 3px; }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="badge" lang="en" dir="ltr"><i aria-hidden="true"></i>OFF AIR</p>
+    <p class="code" aria-hidden="true">404</p>
+    <h1>ئەڤ پەڕە نەهاتە دیتن</h1>
+    <p class="en" lang="en" dir="ltr">This page is off air</p>
+    <div class="actions">
+      <a class="btn btn--ku" href="./" data-home>ڤەگەڕە بو سەرەکی</a>
+      <a class="btn btn--en" href="./" data-home lang="en" dir="ltr">Back to home</a>
+    </div>
+  </main>
+  <script>
+    // On a GitHub Pages project site the home page lives at /<repo>/, whatever depth the missing URL had.
+    (function () {
+      var seg = location.pathname.split('/').filter(Boolean)[0];
+      if (!/\.github\.io$/.test(location.hostname) || !seg) return;
+      document.querySelectorAll('[data-home]').forEach(function (a) { a.href = '/' + seg + '/'; });
+    })();
+  </script>
+</body>
+</html>
