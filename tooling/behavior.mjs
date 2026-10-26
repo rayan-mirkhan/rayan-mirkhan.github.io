@@ -1,22 +1,16 @@
-// Local-only: interaction checks (toggle, menu, counters, persistence, video facade).
+// Local-only: interaction checks (toggle, menu, counters, persistence).
 import { chromium } from 'playwright';
 import { start } from './serve.mjs';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 const server = await start();
-const URL = 'http://localhost:4173/rayan-mirkhan/';
+const URL = 'http://localhost:4173/';
 const browser = await chromium.launch();
 const ok = (c, m) => console.log(c ? 'PASS' : 'FAIL', m);
 
 const ctx = await browser.newContext({ viewport: { width: 1280, height: 900 } });
 const page = await ctx.newPage();
 const errs = []; page.on('pageerror', (e) => errs.push(e.message));
-// inject a test video id without touching the file
-await page.route('**/main.js', async (route) => {
-  const res = await route.fetch(); let body = await res.text();
-  body = body.replace("{ id: '' }, // Featured", "{ id: 'dQw4w9WgXcQ' }, // Featured");
-  route.fulfill({ response: res, body });
-});
 await page.goto(URL, { waitUntil: 'networkidle' });
 ok(await page.evaluate(() => document.documentElement.dir === 'rtl' && document.documentElement.lang === 'ku-Arab'), 'default ku/rtl');
 
@@ -48,14 +42,6 @@ const k = await page.evaluate(() => ({ dir: document.documentElement.dir, focus:
 ok(k.dir === 'rtl' && k.focus === 'ku', 'arrow key switches to ku and moves focus');
 ok(k.anim === 'marquee-rtl', 'ticker reverses in RTL');
 
-// video facade
-const vbtn = page.locator('[data-video="0"] .video__btn');
-ok(await vbtn.count() === 1, 'facade button rendered for set id');
-ok((await vbtn.getAttribute('aria-label')).includes('ڤیدیو'), 'facade label localized');
-ok(await page.locator('[data-video="1"] .video__btn').count() === 0, 'empty id stays coming-soon');
-ok(await page.locator('iframe').count() === 0, 'no iframe before click');
-await vbtn.click();
-ok((await page.locator('[data-video="0"] iframe').getAttribute('src')).startsWith('https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ'), 'iframe injected on click');
 
 // mobile menu
 await page.setViewportSize({ width: 375, height: 800 });
@@ -69,7 +55,7 @@ await page.keyboard.press('Escape');
 ok(await page.evaluate(() => document.getElementById('menu').hidden && document.activeElement.classList.contains('menu-btn') && !document.documentElement.classList.contains('is-locked')), 'Esc closes, restores focus, unlocks');
 
 // 404 under subpath
-const r = await page.goto('http://localhost:4173/rayan-mirkhan/no/such/page', { waitUntil: 'networkidle' });
+const r = await page.goto('http://localhost:4173/no/such/page', { waitUntil: 'networkidle' });
 ok(r.status() === 404 && (await page.locator('h1').textContent()).includes('نەهاتە دیتن'), '404 page renders at nested path');
 
 // CV files reachable

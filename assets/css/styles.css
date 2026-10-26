@@ -225,7 +225,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.
   border-radius: var(--radius);
 }
 .brand__name { font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-@media (max-width: 22.5em) { .brand__name { position: absolute; inline-size: 1px; block-size: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; } }
+@media (max-width: 30em) { .brand__name { position: absolute; inline-size: 1px; block-size: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; } }
 
 .nav { display: none; }
 @media (min-width: 60em) {
@@ -450,8 +450,6 @@ html[lang="en"] .lang-toggle__indicator { transform: translateX(100%); }
   box-shadow: 0 0 0 0 rgba(215, 38, 61, .6);
   animation: pulse 1.8s ease-out infinite;
 }
-.on-air--dim { opacity: .55; }
-.on-air--dim .on-air__dot { animation: none; opacity: .5; }
 .on-air--sm { padding-block: .2rem; padding-inline: .5rem .6rem; font-size: .65rem; color: var(--navy-900); border-color: rgba(11, 26, 46, .18); background: none; }
 @keyframes pulse {
   0% { box-shadow: 0 0 0 0 rgba(215, 38, 61, .6); }
@@ -521,11 +519,10 @@ html[lang="en"] .lang-toggle__indicator { transform: translateX(100%); }
   .portrait { inline-size: 100%; max-inline-size: 28rem; aspect-ratio: 3 / 4; margin-inline: auto 0; }
 }
 .portrait::before {
-  /* gold offset frame */
+  /* gold frame with an even 12px gap around the photo */
   content: "";
   position: absolute;
-  inset-block: 12px -12px;
-  inset-inline: 12px -12px;
+  inset: -12px;
   border: 2px solid var(--gold-500);
   border-radius: var(--radius);
 }
@@ -757,71 +754,6 @@ html[lang="en"] .lang-toggle__indicator { transform: translateX(100%); }
 .stat--lead .stat__sym { color: var(--gold-500); }
 .stat__label { font-size: .9375rem; color: var(--text-muted); line-height: 1.5; }
 :lang(ku) .stat__label { font-size: 1rem; line-height: 1.8; }
-
-/* ----- Showreel ----- */
-.reel { display: grid; gap: 1.25rem; }
-@media (min-width: 48em) {
-  .reel { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); }
-  .video--featured { grid-row: span 2; }
-}
-.video { display: grid; gap: .85rem; align-content: start; }
-.video__frame {
-  position: relative;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-  background: var(--navy-900);
-  border-radius: var(--radius);
-  color: var(--on-navy);
-}
-.video__poster {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  background:
-    linear-gradient(135deg, rgba(232, 185, 49, .08), transparent 40%),
-    repeating-linear-gradient(0deg, rgba(255, 255, 255, .025) 0 1px, transparent 1px 4px),
-    var(--navy-900);
-}
-.video__slate {
-  position: absolute;
-  inset-block-start: 1rem;
-  inset-inline-start: 1rem;
-  font-size: .7rem;
-  letter-spacing: .2em;
-  color: var(--on-navy-muted);
-}
-.video__poster .on-air { position: absolute; inset-block-end: 1rem; inset-inline-start: 1rem; }
-.video__play {
-  display: grid;
-  place-items: center;
-  inline-size: 4.5rem;
-  block-size: 4.5rem;
-  border-radius: 50%;
-  border: 1.5px solid rgba(236, 232, 223, .3);
-  color: rgba(236, 232, 223, .4);
-}
-.video:not(.video--featured) .video__play { inline-size: 3.25rem; block-size: 3.25rem; }
-.video__play svg { margin-inline-start: 4px; }
-.video__title { font-size: clamp(1.15rem, 1.8vw, 1.4rem); font-weight: 700; }
-.video--featured .video__title { font-size: clamp(1.35rem, 2.4vw, 1.85rem); }
-.video__meta { display: grid; justify-items: start; gap: .6rem; }
-/* Published video state (main.js) */
-.video__btn {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  border: 0;
-  padding: 0;
-  background: var(--navy-900) center / cover no-repeat;
-  cursor: pointer;
-}
-.video__btn::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(11, 26, 46, .7), rgba(11, 26, 46, .1)); }
-.video__btn .video__play { position: relative; z-index: 1; background: var(--gold-500); color: var(--navy-900); border-color: var(--gold-500); transition: transform 300ms var(--ease); }
-.video__btn:hover .video__play, .video__btn:focus-visible .video__play { transform: scale(1.08); }
-.video__btn:focus-visible { outline-offset: -4px; }
-.video__frame iframe { position: absolute; inset: 0; inline-size: 100%; block-size: 100%; border: 0; }
 
 /* ----- Services ----- */
 .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr)); gap: 1rem; }

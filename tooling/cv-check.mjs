@@ -4,7 +4,7 @@ import { start } from './serve.mjs';
 const server = await start();
 const browser = await chromium.launch();
 const page = await browser.newPage({ viewport: { width: 360, height: 800 } });
-await page.goto('http://localhost:4173/rayan-mirkhan/', { waitUntil: 'networkidle' });
+await page.goto('http://localhost:4173/', { waitUntil: 'networkidle' });
 for (const id of ['showreel', 'experience', 'languages']) {
   await page.evaluate((i) => document.getElementById(i).scrollIntoView({ behavior: 'instant' }), id);
   await page.waitForTimeout(900);

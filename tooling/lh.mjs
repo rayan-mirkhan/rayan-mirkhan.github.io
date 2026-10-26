@@ -5,7 +5,7 @@ import { chromium } from 'playwright';
 import { start } from './serve.mjs';
 import fs from 'node:fs';
 
-const target = process.argv[2] || 'http://localhost:4173/rayan-mirkhan/';
+const target = process.argv[2] || 'http://localhost:4173/';
 const server = target.includes('localhost') ? await start() : null;
 const chrome = await chromeLauncher.launch({ chromePath: chromium.executablePath(), chromeFlags: ['--headless=new', '--no-sandbox'] });
 fs.mkdirSync('lighthouse', { recursive: true });

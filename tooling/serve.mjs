@@ -1,11 +1,11 @@
-// Local-only static server that mounts the site under /rayan-mirkhan/ to mimic the GitHub Pages project subpath.
+// Local-only static server that serves the site at / like the GitHub Pages user site.
 import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const BASE = '/rayan-mirkhan/';
+const BASE = '/';
 const PORT = Number(process.env.PORT || 4173);
 const TYPES = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.svg': 'image/svg+xml',
   '.png': 'image/png', '.jpg': 'image/jpeg', '.webp': 'image/webp', '.pdf': 'application/pdf', '.txt': 'text/plain', '.xml': 'application/xml' };

@@ -18,7 +18,6 @@ window.RM.translations = {
     'a11y.menuOpen': 'ڤەکرنا لیستێ',
     'a11y.menuClose': 'گرتنا لیستێ',
     'a11y.photoAlt': 'وێنەیێ ڕەیان میرخان',
-    'a11y.play': 'لێدانا ڤیدیویێ',
 
     'name': 'ڕەیان میرخان',
     'title': 'دەرچوویێ زانستێن سیاسی · بێژەر و پێشکێشکار',
@@ -26,15 +25,13 @@ window.RM.translations = {
     'availability': 'ئامادەیە بو هەلێن کاری',
     'onAir': 'ڕاستەوخۆ',
     'scroll': 'خوارێ',
-    'soon': 'ب زوویی',
     'location': 'دهوک، هەرێما کوردستانێ، عێراق',
 
     'nav.about': 'سەبارەت من',
-    'nav.showreel': 'ڤیدیو',
     'nav.skills': 'بەهرە',
     'nav.experience': 'سەربورا کاری',
     'nav.contact': 'پەیوەندیکرن',
-    'num.01': '٠١', 'num.03': '٠٣', 'num.05': '٠٥', 'num.06': '٠٦', 'num.09': '٠٩',
+    'num.01': '٠١', 'num.04': '٠٤', 'num.05': '٠٥', 'num.08': '٠٨',
 
     'btn.contact': 'پەیوەندیێ ب من بکە',
     'btn.cv': 'داگرتنا CV',
@@ -52,7 +49,7 @@ window.RM.translations = {
     'sec.about': '٠١ — سەبارەت من',
     'sec.about.title': 'دەرچوویێ زانستێن سیاسی',
     'about.bio': 'ئەز دەرچوویێ کولیژا زانستێن سیاسی مە. ل سەر ئاستێ کولیژا خو، ل هەر چار سالان ئێکەم بوویمە. من بەهرە هەیە د بوارێ سیاسی دا، وەک بێژەرێ دەنگ و باسان، پێشکێشکرنا بەرنامەیان و هەر تشتەکێ گرێدای سیاسەتێ. بەری نوکە من ئەڤ کارە وەک تاقیکرن ل زانکویا دهوکێ کریە و تێدا گەلەک ب باشی سەرکەفتیمە.',
-    'about.motto': '«سیاسەت ژیانا مە دیار دکەت، و ڕوونکرنا وێ بو خەلکی بەرپرسیاریەکە.»',
+    'about.motto': '«سیاسەتا راستی، ڕووناککرنا رێکا خەلکی یە بەرەڤ پاشەڕۆژەکا پر ژ ئارامی و بەرپرسیارەتییا مێژوویی.»',
 
     'sec.highlights': '٠٢ — خالێن گرنگ',
     'sec.highlights.title': 'ئێکەم ل هەر چار سالان',
@@ -61,13 +58,8 @@ window.RM.translations = {
     'stat.3': 'زمان: کوردی، ئینگلیزی، عەرەبی',
     'stat.4': 'ڕۆل و کارێن جودا',
 
-    'sec.showreel': '٠٣ — ڤیدیو',
-    'sec.showreel.title': 'ڕاستەوخۆ',
-    'video.1': 'بێژەرێ دەنگ و باسان',
-    'video.2': 'پێشکێشکارێ بەرنامەیان',
-    'video.3': 'بڕێڤەبرنا پانێل و کۆنفرانسان',
 
-    'sec.services': '٠٤ — ئامادەیە بو',
+    'sec.services': '٠٣ — ئامادەیە بو',
     'sec.services.title': 'ئامادەیە بو هەلێن کاری',
     'svc.1': 'بێژەریا دەنگ و باسان',
     'svc.2': 'پێشکێشکرنا بەرنامە و دیداران',
@@ -75,7 +67,7 @@ window.RM.translations = {
     'svc.4': 'شروڤەکرنا سیاسی',
     'svc.5': 'پێشکێشکرنا ئاهەنگ و بۆنەیان',
 
-    'sec.skills': '٠٥ — بەهرە',
+    'sec.skills': '٠٤ — بەهرە',
     'sec.skills.title': 'بێژەر و پێشکێشکار',
     'skills.media': 'میدیا و پێشکێشکرن',
     'skills.media.1': 'کارکرن وەک بێژەرێ دەنگ و باسان',
@@ -99,7 +91,7 @@ window.RM.translations = {
     'skills.focus.3': 'هەلبژارتن و حوکمڕانی',
     'skills.focus.4': 'پەیوەندیێن نێڤدەولەتی',
 
-    'sec.experience': '٠٦ — سەربورا کاری',
+    'sec.experience': '٠٥ — سەربورا کاری',
     'sec.experience.title': 'ڕۆل و کارێن جودا',
     'rundown.seg': 'بەش',
     'rundown.story': 'بابەت',
@@ -122,14 +114,14 @@ window.RM.translations = {
     'exp.3.role': 'پێشوازیکرنا میهڤانان',
     'exp.3.text': 'پێشوازیکرنا میهڤانێن کولیژێ و ڕێکخستنا پانێلان ل زانکویا دهوکێ بو میهڤانێن بەرێز',
 
-    'sec.education': '٠٧ — خواندن',
+    'sec.education': '٠٦ — خواندن',
     'sec.education.title': 'بەکالوریوس د زانستێن سیاسی دا',
     'edu.ribbon': 'ئێکەم ل هەر چار سالان',
     'edu.uni': 'زانکویا دهوک',
     'edu.degree': 'بەکالوریوس د زانستێن سیاسی دا',
     'edu.years': '٢٠٢١–٢٠٢٥',
 
-    'sec.languages': '٠٨ — زمان',
+    'sec.languages': '٠٧ — زمان',
     'sec.languages.title': 'کوردی · ئینگلیزی · عەرەبی',
     'lang.ku': 'کوردی (بادینی، سورانی)',
     'lang.ku.level': 'زمانێ دایکێ',
@@ -142,7 +134,7 @@ window.RM.translations = {
     'lang.scale.4': 'ئاست: ٤ ژ ٥',
     'lang.scale.3': 'ئاست: ٣ ژ ٥',
 
-    'sec.contact': '٠٩ — پەیوەندیکرن',
+    'sec.contact': '٠٨ — پەیوەندیکرن',
     'contact.heading': 'پێکڤە کار بکەین',
     'pass.role': 'بێژەر و پێشکێشکار',
     'pass.email': 'ئیمەیل',
@@ -164,7 +156,6 @@ window.RM.translations = {
     'a11y.menuOpen': 'Open menu',
     'a11y.menuClose': 'Close menu',
     'a11y.photoAlt': 'Portrait of Rayan Mirkhan',
-    'a11y.play': 'Play video',
 
     'name': 'Rayan Mirkhan',
     'title': 'Political Science Graduate · News Anchor & Presenter',
@@ -172,15 +163,13 @@ window.RM.translations = {
     'availability': 'Open to opportunities',
     'onAir': 'On air',
     'scroll': 'Scroll',
-    'soon': 'Coming soon',
     'location': 'Duhok, Kurdistan Region, Iraq',
 
     'nav.about': 'About',
-    'nav.showreel': 'Showreel',
     'nav.skills': 'Skills',
     'nav.experience': 'Experience',
     'nav.contact': 'Contact',
-    'num.01': '01', 'num.03': '03', 'num.05': '05', 'num.06': '06', 'num.09': '09',
+    'num.01': '01', 'num.04': '04', 'num.05': '05', 'num.08': '08',
 
     'btn.contact': 'Contact me',
     'btn.cv': 'Download CV',
@@ -198,7 +187,7 @@ window.RM.translations = {
     'sec.about': '01 — About',
     'sec.about.title': 'Political Science Graduate',
     'about.bio': 'I’m a Political Science graduate from the University of Duhok, where I ranked first in my college for all four years. My passion lies where politics meets media: news anchoring, presenting programs, and anything connected to political affairs. I’ve already put this into practice through presenting and anchoring work at the University of Duhok, with excellent results.',
-    'about.motto': '“Politics shapes our lives. Explaining it clearly is a responsibility.”',
+    'about.motto': '“True politics is illuminating the path of the people toward a future full of peace and historical responsibility.”',
 
     'sec.highlights': '02 — Highlights',
     'sec.highlights.title': 'Ranked #1 · All 4 years',
@@ -207,13 +196,8 @@ window.RM.translations = {
     'stat.3': 'Languages: Kurdish, English, Arabic',
     'stat.4': 'Distinct roles held',
 
-    'sec.showreel': '03 — Showreel',
-    'sec.showreel.title': 'On air',
-    'video.1': 'News Anchor',
-    'video.2': 'Program Presenter',
-    'video.3': 'Panel & conference moderation',
 
-    'sec.services': '04 — Available for',
+    'sec.services': '03 — Available for',
     'sec.services.title': 'Open to opportunities',
     'svc.1': 'News anchoring',
     'svc.2': 'Program & interview hosting',
@@ -221,7 +205,7 @@ window.RM.translations = {
     'svc.4': 'Political commentary & analysis',
     'svc.5': 'Event & ceremony hosting',
 
-    'sec.skills': '05 — Skills',
+    'sec.skills': '04 — Skills',
     'sec.skills.title': 'News Anchor & Presenter',
     'skills.media': 'Media & Presenting',
     'skills.media.1': 'News anchoring',
@@ -245,7 +229,7 @@ window.RM.translations = {
     'skills.focus.3': 'Elections & governance',
     'skills.focus.4': 'International relations',
 
-    'sec.experience': '06 — Experience',
+    'sec.experience': '05 — Experience',
     'sec.experience.title': 'Distinct roles held',
     'rundown.seg': 'Seg',
     'rundown.story': 'Story',
@@ -268,14 +252,14 @@ window.RM.translations = {
     'exp.3.role': 'Guest Relations',
     'exp.3.text': 'Welcomed official college guests and organized panels for distinguished guests at the University of Duhok.',
 
-    'sec.education': '07 — Education',
+    'sec.education': '06 — Education',
     'sec.education.title': 'B.A. in Political Science',
     'edu.ribbon': 'Ranked #1 · All 4 years',
     'edu.uni': 'University of Duhok',
     'edu.degree': 'B.A. in Political Science',
     'edu.years': '2021–2025',
 
-    'sec.languages': '08 — Languages',
+    'sec.languages': '07 — Languages',
     'sec.languages.title': 'Kurdish · English · Arabic',
     'lang.ku': 'Kurdish (Badini, Sorani)',
     'lang.ku.level': 'Native',
@@ -288,7 +272,7 @@ window.RM.translations = {
     'lang.scale.4': 'Level 4 of 5',
     'lang.scale.3': 'Level 3 of 5',
 
-    'sec.contact': '09 — Contact',
+    'sec.contact': '08 — Contact',
     'contact.heading': 'Let’s work together',
     'pass.role': 'News Anchor & Presenter',
     'pass.email': 'Email',

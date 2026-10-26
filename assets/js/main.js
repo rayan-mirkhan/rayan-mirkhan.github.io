@@ -1,22 +1,10 @@
 /*
  * Page behaviour: sticky header, mobile menu, scroll reveals, ticker, stat counters,
- * showreel facades, press-pass tilt, footer year.
+ * press-pass tilt, footer year.
  */
 (function () {
   'use strict';
 
-  /*
-   * SHOWREEL VIDEOS
-   * One entry per showreel card in index.html, in the same order (featured card first).
-   * To publish a video, paste its YouTube ID, the part after "watch?v=" in
-   * https://www.youtube.com/watch?v=dQw4w9WgXcQ  ->  id: 'dQw4w9WgXcQ'
-   * An empty id keeps that card in its "Coming soon" state.
-   */
-  var VIDEOS = [
-    { id: '' }, // Featured: News Anchor
-    { id: '' }, // Program Presenter
-    { id: '' }  // Panel & conference moderation
-  ];
 
   var root = document.documentElement;
   var i18n = window.RM.i18n;
@@ -162,42 +150,6 @@
     if (i18n.lang === 'en') nums.forEach(function (el) { render(el, Number(el.getAttribute('data-count'))); });
   }
 
-  /* ---------- Showreel facades (iframe only injected on click) ---------- */
-  function initVideos() {
-    document.querySelectorAll('[data-video]').forEach(function (card) {
-      var video = VIDEOS[Number(card.getAttribute('data-video'))];
-      if (!video || !/^[\w-]{11}$/.test(video.id)) return; // stays "Coming soon"
-
-      var frame = card.querySelector('.video__frame');
-      var title = card.querySelector('.video__title');
-      var chip = card.querySelector('.chip');
-      if (chip) chip.hidden = true;
-      card.classList.add('has-video');
-
-      var btn = document.createElement('button');
-      btn.type = 'button';
-      btn.className = 'video__btn';
-      btn.style.backgroundImage = 'url("https://i.ytimg.com/vi/' + video.id + '/hqdefault.jpg")';
-      btn.innerHTML = '<span class="video__play" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>';
-
-      function label() { btn.setAttribute('aria-label', i18n.t('a11y.play') + ': ' + title.textContent); }
-      label();
-      document.addEventListener('rm:langchange', label);
-
-      btn.addEventListener('click', function () {
-        var iframe = document.createElement('iframe');
-        iframe.src = 'https://www.youtube-nocookie.com/embed/' + video.id + '?autoplay=1&rel=0';
-        iframe.title = title.textContent;
-        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-        iframe.allowFullscreen = true;
-        iframe.referrerPolicy = 'strict-origin-when-cross-origin';
-        frame.replaceChildren(iframe);
-        iframe.focus();
-      });
-
-      frame.replaceChildren(btn);
-    });
-  }
 
   /* ---------- Press-pass tilt (fine pointers only) ---------- */
   function initTilt() {
@@ -235,7 +187,6 @@
   initTicker();
   initReveals();
   initCounters();
-  initVideos();
   initTilt();
   initYear();
 })();

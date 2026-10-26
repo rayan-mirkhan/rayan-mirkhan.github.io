@@ -9,15 +9,16 @@ index.html               page markup (contains the Kurdish copy)
 assets/css/styles.css    design system: tokens → base → layout → components → utilities
 assets/js/translations.js  all copy, { ku: {...}, en: {...} }
 assets/js/i18n.js        language switching
-assets/js/main.js        nav, reveals, ticker, counters, showreel videos, tilt
+assets/js/main.js        nav, reveals, ticker, counters, tilt
 assets/img/              photos, favicon, social preview image
 assets/cv/               rayan-mirkhan-cv-ku.pdf, rayan-mirkhan-cv-en.pdf
 tooling/                 local-only scripts (images, QA, Lighthouse); never loaded by the site
 ```
 
-To preview, open `index.html` directly in a browser. For the exact GitHub Pages setup
-(the site lives under `/rayan-mirkhan/`), run `cd tooling && npm install && node serve.mjs`
-and open http://localhost:4173/rayan-mirkhan/.
+Live at https://rayan-mirkhan.github.io/
+
+To preview, open `index.html` directly in a browser, or run
+`cd tooling && npm install && node serve.mjs` and open http://localhost:4173/.
 
 ## Edit text
 
@@ -40,25 +41,6 @@ Kurdish uses Eastern Arabic digits (٠١٢٣٤٥٦٧٨٩); English uses 0–9. T
    two `<img>` tags in `index.html` to match the new output size (printed by the script).
 
 If you can't run Node, export the four files at those sizes yourself with the same names.
-
-## Add showreel videos
-
-Open `assets/js/main.js` and find `VIDEOS` near the top:
-
-```js
-var VIDEOS = [
-  { id: '' }, // Featured: News Anchor
-  { id: '' }, // Program Presenter
-  { id: '' }  // Panel & conference moderation
-];
-```
-
-Paste the YouTube ID, which is the part after `watch?v=` in the video URL.
-For `https://www.youtube.com/watch?v=AbC123xYz_0`, that's `{ id: 'AbC123xYz_0' }`.
-A card with an ID shows the video thumbnail and a play button. The YouTube player
-(privacy-enhanced youtube-nocookie.com) only loads when the visitor clicks it.
-Cards with an empty ID keep the "Coming soon" design. To rename a card, edit `video.1`,
-`video.2` and `video.3` in the translations (and in `index.html` for Kurdish).
 
 ## Update the CVs
 

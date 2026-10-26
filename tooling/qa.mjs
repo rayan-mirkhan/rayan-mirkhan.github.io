@@ -6,7 +6,7 @@ import fs from 'node:fs';
 const OUT = process.env.QA_OUT || 'qa-out';
 fs.mkdirSync(OUT, { recursive: true });
 const server = await start();
-const URL = 'http://localhost:4173/rayan-mirkhan/';
+const URL = 'http://localhost:4173/';
 const browser = await chromium.launch();
 const widths = [360, 768, 1280, 1600];
 const scheme = process.env.SCHEME || 'light';
