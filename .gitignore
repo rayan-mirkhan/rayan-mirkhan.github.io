@@ -1,0 +1,17 @@
+# Local tooling (asset generation, QA) is never shipped
+node_modules/
+tooling/node_modules/
+tooling/qa-out/
+tooling/lighthouse/
+source-assets/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Env / secrets
+.env
+.env.*
